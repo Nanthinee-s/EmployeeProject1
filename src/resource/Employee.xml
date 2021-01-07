@@ -1,0 +1,18 @@
+<hibernate-mapping>
+    <class name="com.ideas2it.EmployeeApplication.model.Employee" table="Employee">
+        <meta attribute="class-description"> This class contain the User detail </meta>
+        <id name="employeeId" column="employee_id" type="string">
+            <generator class="assigned"> </generator>
+        </id>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="phoneNumber" column="phone_number" type="string"/>
+        <property name="emailId" column="emailId" type="string"/>
+        <property name="status" column="status" type="boolean"/>
+        <list name="address" table="Address" lazy="false" cascade="all">
+            <key column="employee_id"/>
+            <list-index column="idx"/>
+            <one-to-many class="com.ideas2it.EmployeeApplication.model.Address"/>
+        </list>
+    </class>
+</hibernate-mapping>

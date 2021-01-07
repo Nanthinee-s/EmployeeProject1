@@ -1,0 +1,14 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hbm2ddl.auto"> update </property>
+        <property name="connection.driver_class"> com.mysql.jdbc.Driver </property>
+        <!--  Assume test is the database name  -->
+        <property name="connection.url"> jdbc:mysql://localhost:3306/EmployeeApplication?useSSl = false </property>
+        <property name="connection.username"> root </property>
+        <property name="connection.password"> Jelly22fi$h </property>
+        <!--  List of XML mapping files  -->
+        <mapping resource="Employee.hbm.xml"/>
+       // <mapping resource="Address.hbm.xml"/> //
+        // <mapping resource="Project.hbm.xml"/> //
+    </session-factory>
+</hibernate-configuration>
